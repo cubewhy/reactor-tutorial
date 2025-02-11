@@ -1,11 +1,13 @@
 # Introduction
 
 > This tutorial doesn't have too many professional terms, it should be relatively easy to understand.
+
 > This has been **roughly** translated from Chinese -> English, please excuse any grammatical errors.
 
 ## How to use
 
 This tutorial has some code snippets that you can modify and use as you wish.
+
 It is recommended to read this while you program.
 
 ## Resources
@@ -13,17 +15,21 @@ It is recommended to read this while you program.
 Not many people know what to search for when researching this topic & using ChatGPT may not always be correct.
 
 > https://projectreactor.io/docs/core/release/reference/
+
 > https://en.wikipedia.org/wiki/Reactive_programming
 
 ## What is "responsive"
 
 Responsive means all operations will not be blocked and completed in asynchronus threads.
+
 > If you are familiar with NodeJS, `promise` is asynchronous.
 
 ### What makes this different from "traditional" servers
 
 Traditional servers, such as `TomCat`, will open a new thread every time there is a connection made.
+
 Although this is simple, if the number of connections is too much, it will cause a memory overflow and performance issues
+
 If you use responsiveness, no new threads will be opened and all operations will be completed asynchronously.
 
 ## What you need to know
@@ -33,6 +39,7 @@ If you use responsiveness, no new threads will be opened and all operations will
 ⚠️ In reactive mode, the code you write will only be executed when the publisher is blocked, it does not mean that code will be executed once you write it.
 
 The writing in this document is relatively simple and it's recommended to read what the official website says.
+
 You'll have to change your thinking to adapt to reactive programming.
 
 In sync, your code would look like this..
@@ -103,6 +110,7 @@ suspend fun useUser(): SomeData {
 ## What is Publisher
 
 Publisher is an interface which provides a subscribe method to subscribe to the stream
+
 The code inside will not be actually executed until the stream is subscribed.
 
 
@@ -118,7 +126,9 @@ Flux, Mono is an implementation of Publisher
 ## What is Flux
 
 > Want the best description possible? [You can view the Flux documentation here](https://projectreactor.io/docs/core/release/reference/coreFeatures/flux.html)
+
 In simple terms, Flux is a Stream, but it can add data.
+
 Whenever a piece of data is added, the stream you defined will be executed once
 
 There can be multiple data (or 0) in Flux
@@ -128,6 +138,7 @@ There can be multiple data (or 0) in Flux
 ## What is Mono
 
 > Want the best description possible? [You can view the Mono documentation here](https://projectreactor.io/docs/core/release/reference/coreFeatures/mono.html)
+
 Mono can only contain one data (or empty), and the flow inside will be called after being blocked.
 
 ![mono](images/mono.svg)
