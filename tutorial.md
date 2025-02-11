@@ -106,7 +106,7 @@ suspend fun useUser(): SomeData {
 
 ## 什么是Publisher
 
-Publisher是一个抽象的类 其中提供了一个 subscribe方法用来订阅流
+Publisher是一个接口 其中提供了一个 subscribe方法用来订阅流
 
 流被订阅之后里边的代码才会被实际执行
 
