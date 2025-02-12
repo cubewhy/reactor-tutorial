@@ -136,7 +136,7 @@ Flux中可以有多个数据(或者0个)
 
 代码 **Mono.kt**
 
-> 觉得简单? [外部链接](https://projectreactor.io/docs/core/release/reference/coreFeatures/flux.html)
+> 觉得简单? [外部链接](https://projectreactor.io/docs/core/release/reference/coreFeatures/mono.html)
 
 Mono 中只能带有一个数据(或者是空的), 在被block之后会调用里边的flow
 
